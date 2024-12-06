@@ -1,0 +1,108 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* Dashboard Container */
+.dashboard-container {
+    display: flex;
+    height: 100vh;
+}
+
+/* Sidebar */
+.sidebar {
+    background-color: #2e2e2e;
+    color: #fff;
+    padding: 20px;
+    width: 250px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.sidebar h2 {
+    margin-bottom: 30px;
+}
+
+.user-info {
+    text-align: center;
+}
+
+.user-info img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+/* Main Content */
+.main-content {
+    flex-grow: 1;
+    padding: 20px;
+}
+
+.main-content h1 {
+    margin-bottom: 20px;
+}
+
+.moment-form label {
+    display: block;
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+.moment-form input,
+.moment-form textarea,
+.moment-form select {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+}
+
+.moment-form textarea {
+    resize: none;
+}
+
+.moment-form .toggle-switch {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.moment-form button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #5cb85c;
+    color: #fff;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.moment-form button[type="reset"] {
+    background-color: #d9534f;
+    margin-left: 10px;
+}
+
+.moment-form button:hover {
+    opacity: 0.9;
+}
+
+/* Form Buttons Container */
+.form-buttons {
+    margin-top: 20px;
+    display: flex;
+    justify-content: flex-start;
+}

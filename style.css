@@ -1,0 +1,193 @@
+/* General Styles */
+body {
+    margin: 0;
+    padding: 0px;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+/* Container */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: left;
+}
+
+/* Heading and Subtitle */
+h1 {
+
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    color: #222;
+}
+
+.subtitle {
+    font: "Raleway";
+    font-size: 1.0em;
+    margin-bottom: 30px;
+    color: #8f8888;
+}
+
+/* Carousel */
+.carousel {
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.carousel-track-container {
+    flex: 1;
+    overflow: hidden;
+    position: relative;
+}
+
+.carousel-track {
+    display: flex;
+    gap: 20px;
+    transition: transform 0.3s ease-in-out;
+    width: max-content;
+    /* Ensures all cards stay in a single row */
+    white-space: nowrap;
+    /* Prevent wrapping */
+}
+
+/* Arrows */
+.arrow {
+    align-content: center;
+    background: none;
+    border: none;
+    font-size: 2em;
+    cursor: pointer;
+    color: #a39898;
+}
+
+.arrow:hover {
+    color: #222;
+}
+
+/* Card */
+.card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;
+    width: 300px;
+    /* Fixed card width */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: left;
+    flex-shrink: 0;
+    /* Prevent cards from shrinking */
+    overflow: visible;
+    /* Allow content to expand beyond the card boundary */
+    /* Remove height restriction */
+    overflow: visible;
+    /* Allow text to flow fully */
+    text-overflow: unset;
+}
+
+.card p {
+    font-size: 1em;
+    line-height: 1.5;
+    color: #555;
+    max-height: none;
+    /* Remove height restriction */
+    overflow: visible;
+    /* Allow text to flow fully */
+    text-overflow: unset;
+    /* Remove truncation */
+    display: block;
+    /* Ensure content flows properly */
+    -webkit-line-clamp: unset;
+    /* Disable truncation for multiline */
+    -webkit-box-orient: unset;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Card Image */
+.card img {
+    width: 100%;
+    /* Ensures the image fits inside the card */
+    height: 150px;
+    /* Fixed height to maintain consistency */
+    object-fit: cover;
+    /* Crop or scale the image proportionally */
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+/* Card Title */
+.card h2 {
+    font-size: 1.0em;
+    margin-bottom: 10px;
+    color: #222;
+    white-space: nowrap;
+    /* Prevent title from breaking into multiple lines */
+    overflow: hidden;
+    /* Cut off overflowing text */
+    text-overflow: ellipsis;
+    /* Show ellipsis (…) for overflowed text */
+}
+
+/* Card Description */
+.card p {
+    font-size: 0.7em;
+    line-height: 1.5;
+    color: #746b6b;
+    max-height: 60px;
+    /* Limit the height for descriptions */
+    overflow: hidden;
+    /* Hide content that exceeds the height */
+    text-overflow: ellipsis;
+    /* Show ellipsis (…) for overflowed text */
+    display: -webkit-box;
+    /* For multiline truncation */
+    -webkit-line-clamp: 3;
+    /* Limit to 3 lines */
+    -webkit-box-orient: vertical;
+    /* Required for -webkit-line-clamp */
+}
+
+/* Delete Button */
+.card .delete-btn {
+    display: block;
+    text-align: center;
+    margin: 10px auto 0;
+    /* Space the button from the rest of the content */
+    padding: 10px 15px;
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.card .delete-btn:hover {
+    background-color: #c0392b;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .carousel-track {
+        flex-wrap: wrap;
+        /* Allows cards to wrap in small screens */
+    }
+
+    .card {
+        width: 90%;
+        /* Make cards take up most of the screen width */
+        margin: 0 auto;
+    }
+
+    .arrow {
+        font-size: 1.5em;
+        /* Reduce arrow size for smaller screens */
+    }
+}

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Featured Moments</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Featured Moments</h1>
+        <p class="subtitle">
+            Our experiences reflect our distinct ethos and core values, highlighting the very best each of our homes
+            offers.
+        </p>
+        <div class="arrows-container">
+            <button id="prevBtn" class="arrow">←</button>
+            <button id="nextBtn" class="arrow">→</button>
+        </div>
+
+        <!-- Carousel container -->
+        <div class="carousel">
+
+            <div class="carousel-track-container">
+                <div class="carousel-track" id="carousel-track">
+                    <!-- Static cards -->
+                    <div class="card">
+                        <img src="overlanding.jpg" alt="Overlanding Trips">
+                        <h2>Overlanding Trips</h2>
+                        <p>Overlanding is a form of slow travel. It’s all about taking the road less travelled, camping
+                            across different terrains, and getting away from the tourist trail in overlanding trucks.
+                        </p>
+                        <button class="delete-btn" data-id="static">Delete</button>
+                    </div>
+
+                    <div class="card">
+                        <img src="desert.jpg" alt="Mountain Camping">
+                        <h2>Mountain & Desert Camping</h2>
+                        <p>We’ve found the perfect mountains and deserts to pitch your tent and roll out those sleeping
+                            bags for a date with the milky way. Want in?</p>
+                        <button class="delete-btn" data-id="static">Delete</button>
+                    </div>
+
+                    <div class="card">
+                        <img src="mountain.jpg" alt="Mountain Trekking">
+                        <h2>Mountain Trekking</h2>
+                        <p>Far away from the skyscrapers and beach clubs of Dubai, we’ve discovered a breathtaking array
+                            of mountains, deserts, and lush green wadis waiting to be explored. So, let’s go hiking!</p>
+                        <button class="delete-btn" data-id="static">Delete</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const track = document.getElementById("carousel-track");
+        const prevBtn = document.getElementById("prevBtn");
+        const nextBtn = document.getElementById("nextBtn");
+
+        let currentIndex = 0;
+
+        function moveCarousel(direction) {
+            const cards = track.children;
+            const cardWidth = cards[0].offsetWidth + 40; // Include card width and padding
+            const trackWidth = track.scrollWidth;
+
+            currentIndex += direction;
+
+            // Prevent out-of-bounds scrolling
+            if (currentIndex < 0) currentIndex = 0;
+            if (currentIndex * cardWidth >= trackWidth) currentIndex -= direction;
+
+            const newPosition = -currentIndex * cardWidth;
+            track.style.transform = `translateX(${newPosition}px)`;
+        }
+
+        prevBtn.addEventListener("click", () => moveCarousel(-1));
+        nextBtn.addEventListener("click", () => moveCarousel(1));
+    </script>
+</body>
+
+</html>
